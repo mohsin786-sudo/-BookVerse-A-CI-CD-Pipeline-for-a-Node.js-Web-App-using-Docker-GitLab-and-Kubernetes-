@@ -1,0 +1,19 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t bookverse-backend .
+
+test:
+  stage: test
+  script:
+    - echo "Tests go here" # Placeholder
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to K8s..."

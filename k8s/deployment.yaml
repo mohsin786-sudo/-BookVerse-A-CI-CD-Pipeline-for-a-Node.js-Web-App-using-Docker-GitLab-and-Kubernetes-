@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookverse-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bookverse
+  template:
+    metadata:
+      labels:
+        app: bookverse
+    spec:
+      containers:
+        - name: backend
+          image: bookverse-backend
+          ports:
+            - containerPort: 3000
